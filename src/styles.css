@@ -18,7 +18,7 @@ body{
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #1e2124;
+    background-color:hsl(240, 25%, 5%);
 }
 
 main{
@@ -31,10 +31,10 @@ main{
     padding: 1rem;
 } main p{
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.5em;
+    font-size: 1em;
     width: 90%;
 } main a{
-    color: #a2ddff;
+    color: #fff;
     text-decoration: none;
     transition: text-shadow 0.3s;
 } main h2{
@@ -73,16 +73,16 @@ main{
     position: relative;
     margin: 0;
     width: 100%;
-    padding: 5rem 2rem 5rem;
+    padding: 3rem 0 3rem;
     font-size: 1.5em;
 }
 
 .date{
-    background: linear-gradient(to right, #87a1ff, #7289da, #5865F2, #5663F7, #404EED, #2a3bf0);
+    background: linear-gradient(to right, #ffbb00, #ffaa00, #ff9900, #ff8800, #ff7700, #ff6600, #ff5500, #ff4400);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: rainbow_animation 6s ease-in-out infinite;
+    animation: rainbow_animation 4s ease-in-out infinite;
     background-size: 400% 100%;
 }
 
@@ -101,7 +101,7 @@ article{
     display: block;
     text-align: center;
     margin: auto;
-    background-color:#282b30;
+    background-color:hsl(200, 10%, 10%);
     padding: 2rem 0 2rem 0rem;
     width: 90%;
     border-radius: 2rem;
@@ -117,12 +117,15 @@ article{
     border-radius: 0.5rem;
     font-size: 0.9rem;
     border: 2px solid rgb(125, 125, 125);
+} article a{
+    display: inline-block;
+    padding: 1rem 0 1rem 0;
 }
 
 footer{
     margin: auto;
     text-align: center;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Aldrich', monospace;
     padding: 1.5em;
 } footer a{
     color: #ffffff;
@@ -135,35 +138,13 @@ button{
     padding: 0.9rem;
     font-size:1em;
     font-family: 'JetBrains Mono', monospace;
-    background-color: #1e2124;
+    background-color: #25292c;
     color: white;
     border-radius: 0.8rem;
     transition: background-color 0.3s;
 } button:hover{
     cursor: pointer;
     background-color:#2b3035 !important;
-} .resetButton, .copyButton{
-    margin-left: 0.5rem;
-} .resetButton:hover{
-    background-color:#420000 !important;
-} .copyButton:hover{
-    background-color:#0c4200 !important;
-}
-
-#datepicker{
-    background-color: #1e2124;
-    color: white;
-    font-family: 'JetBrains Mono', monospace;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
-    border: 2px solid rgb(125, 125, 125);
-}
-
-#timediv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 @media screen and (max-width: 900px){
