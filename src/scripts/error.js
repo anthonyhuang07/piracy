@@ -1,4 +1,4 @@
-// if you're reading this, that link in the homepage of my website leads to this, a pranking website. Ip loggers, microphone/camera permissions are not used harmfully. You can check the code for yourself.
+// if you're reading this, Ip loggers, microphone/camera permissions are not used harmfully. You can check the code for yourself.
 
 var elem = document.documentElement;
 let clickEnabled = true; // checks if you're able to click to start the process
