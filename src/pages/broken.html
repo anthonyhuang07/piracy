@@ -13,9 +13,20 @@ permalink: /broken/
         background-size: cover;
         overflow:hidden;
     }
+
+    article {
+      margin: auto;
+      text-align: center;
+      display: flex;
+    }
   </style>
 </head>
 <body>
-  <script src="/trollage/src/scripts/broken.js"></script>
+  <article id="fullscreenDiv">
+    <button onclick="fullscreen()">
+      <p>Enter Fullscreen</p>
+    </button>
+  </article>
+  <script src="../scripts/broken.js"></script>
 </body>
 </html>
