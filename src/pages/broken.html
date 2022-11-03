@@ -3,32 +3,36 @@ permalink: /broken/
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>...</title>
   <style>
     body {
-        background-image: url("/trollage/assets/img/broken.jpg");
-        background-position: center;
-        background-size: cover;
-        overflow:hidden;
+      background-image: url("/trollage/assets/img/broken.jpg");
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
     }
 
     article {
-      height: 100%;
-      width: 100%;
-      margin: auto;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    } article button{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    article button {
       padding: 5rem;
-    } article h1{
+    }
+
+    article h1 {
       font-size: 2rem;
     }
   </style>
 </head>
+
 <body>
   <article id="fullscreenDiv">
     <button onclick="fullscreen()">
@@ -37,4 +41,5 @@ permalink: /broken/
   </article>
   <script src="/trollage/src/scripts/broken.js"></script>
 </body>
+
 </html>
