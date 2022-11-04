@@ -1,7 +1,6 @@
 let elem = document.documentElement;
 
-function fullscreen(){
-    document.getElementById("fullscreenDiv").style.visibility = "hidden";
+document.body.onclick = function(){
     elem.requestFullscreen();
     elem.webkitRequestFullscreen();
     elem.msRequestFullscreen();
