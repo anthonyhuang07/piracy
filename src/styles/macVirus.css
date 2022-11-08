@@ -17,10 +17,12 @@ body{
     background-image: url("../../assets/img/macVirus/google.png");
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
 footer {
     position: fixed;
+    left: 0;
     bottom: 0;
 }
