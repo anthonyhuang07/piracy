@@ -1,4 +1,7 @@
-# trollage
-trolley site to troll your friends
+# Trollage
 
-inspired by https://geekprank.com
+A funny website full of funny websites to troll your friends! Reactions are priceless...
+
+Inspired by https://geekprank.com
+
+https://ah07.xyz/trolley
