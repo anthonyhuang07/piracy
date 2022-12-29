@@ -42,12 +42,12 @@ document.body.addEventListener('click', function (event) {
         } else if (ongoing === 7) {
             if (!click2) return;
             document.getElementById('JUMPSCARE').innerHTML = `<img src="https://img.wattpad.com/4009de212dd674200c2f899cfcf4ccf2969b60e3/687474703a2f2f342e62702e626c6f6773706f742e636f6d2f2d7061747570314a6d6973302f557734483534476a5465492f41414141414141414259552f7832595a745752664655772f73313630302f6d617872657364656661756c742e6a7067?s=fit&h=360&w=360&q=80" width="500px" id="JUMPIMAGE"/>`;
-            var audio = new Audio('../../assets/audio/jump.mp3');
+            var audio = new Audio('/trollage/assets/audio/jump.mp3');
             audio.play();
             click2 = false;
         } else if (ongoing === 15){
             document.getElementById('JUMPSCARE').innerHTML = `<img src="https://i.ytimg.com/vi/tdXgl8QtU-I/mqdefault.jpg" width="500px" id="JUMPIMAGE"/>`;
-            var superLuigi = new Audio('../../assets/audio/superLuigi.mp3');
+            var superLuigi = new Audio('/trollage/assets/audio/superLuigi.mp3');
             superLuigi.play();
         } else if (ongoing === 22){
             document.getElementById('JUMPSCARE').innerHTML = `<h1 id="JUMPIMAGE" style="color: rgb(119, 7, 7);">Mario is watching you...</h1>`;
@@ -124,7 +124,7 @@ document.body.addEventListener('click', function (event) {
         } else if (countdown == 20) {
             getLocalStream(); // activates camera/mic perms
         } else if (countdown == 17) {
-            window.open("../../assets/AmongUs.exe.vbs"); // downloads a vbscript file (if you open it, it's harmless anyways- feel free to use task manager to kill the process)
+            window.open("/trollage/assets/AmongUs.exe.vbs"); // downloads a vbscript file (if you open it, it's harmless anyways- feel free to use task manager to kill the process)
         } else if (countdown == 15) {
             ipLogger();
         } else if (countdown == 5) {
@@ -137,7 +137,7 @@ document.body.addEventListener('click', function (event) {
 
     reduceCountdown();
     // the background audio (Credit: Joey Perleoni for the nintendo anti-piracy screens)
-    var audio = new Audio('../../assets/audio/piracy.mp3'); 
+    var audio = new Audio('/trollage/assets/audio/piracy.mp3'); 
     audio.play(); 
     // fullscreen requests
     elem.requestFullscreen();
