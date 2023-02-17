@@ -4,6 +4,8 @@ var elem = document.documentElement;
 let clickEnabled = true; // checks if you're able to click to start the process
 let click2 = true; // checks if you're able to trigger the jumpscare
 
+document.getElementById('map').style.display = 'none';
+
 function getLocalStream() { //asks for vid and mic perms (does nothing)
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
         window.localStream = stream; // A
@@ -14,9 +16,32 @@ function getLocalStream() { //asks for vid and mic perms (does nothing)
     });
 }
 
+//#region map initialization
+function initMap() {
+    $.getJSON('https://ipapi.co/json/', function (data) {
+        // The location
+        const location = { lat: data.latitude, lng: data.longitude };
+        // The map, centered at location
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: location,
+        });
+        // The marker, positioned at location
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map,
+        });
+    });
+}
+
+
+window.initMap = initMap;
+
+//#endregion
+
 window.onbeforeunload = function () { // asks before leaving page
     return "";
-};  
+};
 
 function ipLogger() { // DON'T WORRY, THIS WON'T BE SAVED, just a funny troll
     $.getJSON('https://ipapi.co/json/', function (data) {
@@ -27,7 +52,8 @@ function ipLogger() { // DON'T WORRY, THIS WON'T BE SAVED, just a funny troll
 document.body.addEventListener('click', function (event) {
     if (!clickEnabled) return
     clickEnabled = false;
-    alert("You will now be starting the process. Note: If you leave the site right now, you will receive a Criminal Record on your name and your information tracked by GitHub & Microsoft Incorporated via Bruteforce SSH on your IP Address. This will allow local authorities to collect your information. In order to defend yourself, please have a lawyer ready before you start the connection. DO NOT LEAVE THIS SITE.");
+    alert("You will now be starting the call process. If you leave the site right now, data collected by GitHub, Inc. & Microsoft Corporation will be used for a Bruteforce SSH towards your network. This will allow local authorities to collect your information and your location. DO NOT LEAVE THIS SITE.");
+    document.body.style.cursor = 'none';
     let countdown = 25;
     // ongoing call counters (start when startCountdown() is called)
     let ongoing = 0;
@@ -37,7 +63,7 @@ document.body.addEventListener('click', function (event) {
         if (ongoing === 60) {
             ongoing = 0;
             ongoingm++;
-        } else if (ongoing === 9){ // adding this line marks my 444th github commit! I BETTER GET RID OF IT, THIS COMMENT SHOULD DO IT!
+        } else if (ongoing === 9) { // adding this line marks my 444th github commit! I BETTER GET RID OF IT, THIS COMMENT SHOULD DO IT!
             document.getElementById('blood').style.visibility = 'visible';
         } else if (ongoing === 7) {
             if (!click2) return;
@@ -45,12 +71,12 @@ document.body.addEventListener('click', function (event) {
             var audio = new Audio('/trollage/assets/audio/jump.mp3');
             audio.play();
             click2 = false;
-        } else if (ongoing === 15){
+        } else if (ongoing === 15) {
             document.getElementById('JUMPSCARE').innerHTML = `<img src="https://i.ytimg.com/vi/tdXgl8QtU-I/mqdefault.jpg" width="500px" id="JUMPIMAGE"/>`;
             var superLuigi = new Audio('/trollage/assets/audio/superLuigi.mp3');
             superLuigi.play();
-        } else if (ongoing === 22){
-            document.getElementById('JUMPSCARE').innerHTML = `<h1 id="JUMPIMAGE" style="color: rgb(119, 7, 7);">Mario is watching you...</h1>`;
+        } else if (ongoing === 22) {
+            document.getElementById('JUMPSCARE').innerHTML = `<h1 id="JUMPIMAGE" style="color: rgb(119, 7, 7);">Open the door please...</h1>`;
         }
 
         // replaces single digit numbers with double digits in the call timer
@@ -108,6 +134,13 @@ document.body.addEventListener('click', function (event) {
             countdown = 14;
             reduceCountdown3();
             return
+        } else if (countdown == 10) {
+            // Initialize and add the map
+            document.getElementById('map').style.display = 'block';
+            document.getElementById('yourmom').innerHTML = `The connection tone has started. Initializing bruteforce...<br><br>Local Authorities have closed in on your location!`;
+        } else if (countdown == 2) {
+            document.getElementById('map').style.display = 'none';
+            document.getElementById('yourmom').innerHTML = `The connection tone has started. Initializing bruteforce...`;
         }
         countdown--;
         setTimeout(reduceCountdown2, 1000)
@@ -124,7 +157,7 @@ document.body.addEventListener('click', function (event) {
         } else if (countdown == 20) {
             getLocalStream(); // activates camera/mic perms
         } else if (countdown == 17) {
-            window.open("/trollage/assets/AmongUs.exe.vbs"); // downloads a vbscript file (if you open it, it's harmless anyways- feel free to use task manager to kill the process)
+            /*window.open("/trollage/assets/AmongUs.exe.vbs"); // downloads a vbscript file (if you open it, it's harmless anyways- feel free to use task manager to kill the process) */
         } else if (countdown == 15) {
             ipLogger();
         } else if (countdown == 5) {
@@ -137,8 +170,8 @@ document.body.addEventListener('click', function (event) {
 
     reduceCountdown();
     // the background audio (Credit: Joey Perleoni for the nintendo anti-piracy screens)
-    var audio = new Audio('/trollage/assets/audio/piracy.mp3'); 
-    audio.play(); 
+    var audio = new Audio('/trollage/assets/audio/piracy.mp3');
+    audio.play();
     // fullscreen requests
     elem.requestFullscreen();
     elem.webkitRequestFullscreen();
