@@ -5,3 +5,5 @@
 /package.json
 
 .DS_Store
+
+.env
