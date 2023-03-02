@@ -4,7 +4,7 @@ var elem = document.documentElement;
 let clickEnabled = true; // checks if you're able to click to start the process
 let click2 = true; // checks if you're able to trigger the jumpscare
 
-document.getElementById('map').style.display = 'none';
+
 
 function getLocalStream() { //asks for vid and mic perms (does nothing)
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
