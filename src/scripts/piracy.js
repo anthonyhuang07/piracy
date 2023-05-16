@@ -12,7 +12,7 @@ function getLocalStream() { //asks for vid and mic perms (does nothing)
         window.localAudio.srcObject = stream; // B
         window.localAudio.autoplay = true; // C
     }).catch((err) => {
-        console.error(`you got an error: ${err}`)
+        console.error(`ERROR GETTING LOCALSTREAM: ${err}`)
     });
 }
 
@@ -134,13 +134,6 @@ document.body.addEventListener('click', function (event) {
             countdown = 14;
             reduceCountdown3();
             return
-        } else if (countdown == 10) {
-            // Initialize and add the map
-            document.getElementById('map').style.display = 'block';
-            document.getElementById('yourmom').innerHTML = `The connection tone has started. Initializing bruteforce...<br><br>Local Authorities have closed in on your location!`;
-        } else if (countdown == 2) {
-            document.getElementById('map').style.display = 'none';
-            document.getElementById('yourmom').innerHTML = `The connection tone has started. Initializing bruteforce...`;
         }
         countdown--;
         setTimeout(reduceCountdown2, 1000)
