@@ -1,10 +1,8 @@
 // if you're reading this, Ip loggers, microphone/camera permissions are not used harmfully. You can check the code for yourself.
 
-var elem = document.documentElement;
+let elem = document.documentElement;
 let clickEnabled = true; // checks if you're able to click to start the process
 let click2 = true; // checks if you're able to trigger the jumpscare
-
-
 
 function getLocalStream() { //asks for vid and mic perms (does nothing)
     navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
@@ -15,29 +13,6 @@ function getLocalStream() { //asks for vid and mic perms (does nothing)
         console.error(`ERROR GETTING LOCALSTREAM: ${err}`)
     });
 }
-
-//#region map initialization
-function initMap() {
-    $.getJSON('https://ipapi.co/json/', function (data) {
-        // The location
-        const location = { lat: data.latitude, lng: data.longitude };
-        // The map, centered at location
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 12,
-            center: location,
-        });
-        // The marker, positioned at location
-        const marker = new google.maps.Marker({
-            position: location,
-            map: map,
-        });
-    });
-}
-
-
-window.initMap = initMap;
-
-//#endregion
 
 window.onbeforeunload = function () { // asks before leaving page
     return "";
@@ -52,7 +27,7 @@ function ipLogger() { // DON'T WORRY, THIS WON'T BE SAVED, just a funny troll
 document.body.addEventListener('click', function (event) {
     if (!clickEnabled) return
     clickEnabled = false;
-    alert("You will now be starting the call process. If you leave the site right now, data collected by GitHub, Inc. & Microsoft Corporation will be used for a Bruteforce SSH towards your network. This will allow local authorities to collect your information and your location. DO NOT LEAVE THIS SITE.");
+    alert("You will now be starting the call process. If you leave the site right now, data collected by GitHub, Inc. & Microsoft Corporation will be used for a Bruteforce SSH on your network. This will allow local authorities to collect your information and your location. DO NOT LEAVE THIS SITE.");
     document.body.style.cursor = 'none';
     let countdown = 25;
     // ongoing call counters (start when startCountdown() is called)
