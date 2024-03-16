@@ -1,4 +1,4 @@
-# Piracy Detected
+# PIRACY DETECTED
 
 Fake piracy detected website using the GitHub Pages 404 site. 
 
