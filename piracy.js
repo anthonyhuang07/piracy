@@ -117,7 +117,7 @@ document.body.addEventListener('click', function (event) {
     function reduceCountdown() { //countdown no1 (process start)
         if (countdown == 0) {
             document.getElementById('yourmom').innerHTML = `The connection tone has started. Initializing bruteforce...`;
-            document.getElementById("ip").innerHTML = `<img src="https://i.sstatic.net/kOnzy.gif" width="25px"/>`
+            document.getElementById("ip").innerHTML = `<img src="/piracy/assets/loading.gif" width="25px"/>`
 
             countdown = 20;
             reduceCountdown2();
